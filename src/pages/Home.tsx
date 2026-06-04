@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import {
   Sparkles,
   ShieldCheck,
@@ -82,19 +81,6 @@ const areas = [
 ];
 
 export default function Home() {
-  useEffect(() => {
-    // Load the Elfsight script dynamically to ensure it initializes when the component mounts
-    const script = document.createElement("script");
-    script.src = "https://elfsightcdn.com/platform.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      // Optional cleanup
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <main id="top" className="bg-background text-foreground">
       <script
@@ -349,7 +335,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="mt-12 w-full min-h-[400px]">
-            <div className="elfsight-app-01833423-a7d8-4e0a-976d-e4bd4bf76747"></div>
+            <div className="elfsight-app-01833423-a7d8-4e0a-976d-e4bd4bf76747" data-elfsight-app-lazy></div>
           </div>
         </div>
       </section>
