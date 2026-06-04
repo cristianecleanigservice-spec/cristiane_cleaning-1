@@ -335,7 +335,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="mt-12 w-full min-h-[400px]">
-            <div className="elfsight-app-01833423-a7d8-4e0a-976d-e4bd4bf76747" data-elfsight-app-lazy></div>
+            <div id="shapo-widget-8400582cccb4fa801cff"></div>
           </div>
         </div>
       </section>
