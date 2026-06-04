@@ -335,7 +335,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="mt-12 w-full min-h-[400px]">
-            <div id="shapo-widget-8400582cccb4fa801cff"></div>
+            <div className="tagembed-widget" style={{ width: "100%", height: "100%", overflow: "auto" }} data-widget-id="327312" data-website="1"></div>
           </div>
         </div>
       </section>
