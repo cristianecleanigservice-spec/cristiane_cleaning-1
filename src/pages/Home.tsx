@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   Sparkles,
   ShieldCheck,
@@ -81,6 +82,19 @@ const areas = [
 ];
 
 export default function Home() {
+  useEffect(() => {
+    // Load the Elfsight script dynamically to ensure it initializes when the component mounts
+    const script = document.createElement("script");
+    script.src = "https://elfsightcdn.com/platform.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Optional cleanup
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <main id="top" className="bg-background text-foreground">
       <script
@@ -218,21 +232,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section id="reviews" className="bg-background py-20 md:py-28">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-secondary">Reviews</p>
-            <h2 className="mt-3 text-balance text-4xl leading-[1.05] md:text-5xl">
-              See what our clients are saying.
-            </h2>
-          </div>
-          <div className="mt-12 w-full min-h-[400px]">
-            <div className="elfsight-app-01833423-a7d8-4e0a-976d-e4bd4bf76747" data-elfsight-app-lazy></div>
-          </div>
-        </div>
-      </section>
-
       {/* SERVICES */}
       <section id="services" className="container-page py-20 md:py-28">
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
@@ -350,7 +349,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="mt-12 w-full min-h-[400px]">
-            <div className="elfsight-app-01833423-a7d8-4e0a-976d-e4bd4bf76747" data-elfsight-app-lazy></div>
+            <div className="elfsight-app-01833423-a7d8-4e0a-976d-e4bd4bf76747"></div>
           </div>
         </div>
       </section>
